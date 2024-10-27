@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Actualizar de Categoría</h2>
+<mat-dialog-content>
+  <form [formGroup]="categoryForm" class="form-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="name" placeholder="Ingrese el nombre de la categoría" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Descripción</mat-label>
+      <input matInput formControlName="description" placeholder="Ingrese la descripción" />
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()">Guardar</button>
+</mat-dialog-actions>
