@@ -1,0 +1,60 @@
+<section>
+  <div class="form-wrapper">
+    <div class="form-left" id="form-left">
+      <form (ngSubmit)="onLogin()" class="sign-in" *ngIf="!showRegisterForm">
+        <h2 class="form-title">Iniciar Sesión</h2>
+        <label for="username">Usuario</label>
+        <input type="text" id="username" [(ngModel)]="username" name="username" required />
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" [(ngModel)]="password" name="password" required />
+        <div class="sign-inForgot">
+          <a>¿Olvidaste tu contraseña?</a>
+          <button type="submit">Ingresar</button>
+        </div>
+        <div class="message" *ngIf="loginError" style="color: red;">{{ loginError }}</div>
+      </form>
+      <div class="switch-message" *ngIf="showRegisterForm">
+        <h2>¿Ya tienes cuenta?</h2>
+        <button (click)="toggleForms()">Inicia Sesión</button>
+      </div>
+    </div>
+    <div class="form-right" id="form-right">
+      <div class="switch-message" *ngIf="!showRegisterForm">
+        <h2>¿Aún no tienes cuenta?</h2>
+        <button (click)="toggleForms()">Accede aquí</button>
+      </div>
+      <form (ngSubmit)="onRegister()" class="sign-up" *ngIf="showRegisterForm">
+        <h2 class="form-title">Registrarse</h2>
+        <div class="form-columns">
+          <div class="form-partOne">
+            <label for="names">Nombres</label>
+            <input type="text" id="names" [(ngModel)]="newUser.names" name="names" required />
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" [(ngModel)]="newUser.email" name="email" required />
+            <label for="username">Usuario</label>
+            <input type="text" id="username2" [(ngModel)]="newUser.username" name="username" required />
+            <label for="password">Contraseña</label>
+            <input type="password" id="password2" [(ngModel)]="newUser.password" name="password" required />
+          </div>
+          <div class="form-partTwo">
+            <label for="surnames">Apellidos</label>
+            <input type="text" id="surnames" [(ngModel)]="newUser.surnames" name="surnames" required />
+            <label for="phoneNumber">Teléfono</label>
+            <input type="text" id="phoneNumber" [(ngModel)]="newUser.phoneNumber" name="phoneNumber" required />
+            <label for="gender">Género</label>
+            <select id="gender" [(ngModel)]="newUser.gender" name="gender" required>
+              <option value="M">Masculino</option>
+              <option value="F">Femenino</option>
+            </select>
+            <label for="image">Imagen de Perfil</label>
+            <input type="file" id="image" (change)="onImageSelected($event)" />
+          </div>
+        </div>
+        <button type="submit">Registrarse</button>
+        <div class="message" *ngIf="registerError" style="color: red;">{{ registerError }}</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+
