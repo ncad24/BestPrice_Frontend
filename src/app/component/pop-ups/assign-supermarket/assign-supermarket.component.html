@@ -1,0 +1,19 @@
+<section>
+  <h2>Asignar Supermercado</h2>
+  <div>
+    <label>Buscar Supermercado:</label>
+    <select [(ngModel)]="selectedSupermarket">
+      <option *ngFor="let supermarket of supermarkets" [ngValue]="supermarket">
+        {{ supermarket.name}}
+      </option>
+    </select>
+  </div>
+  <div>
+    <label>Precio:</label>
+    <input type="number" [(ngModel)]="price" placeholder="Ingrese el precio" />
+  </div>
+  <div class="buttons">
+    <button (click)="onClose()">Cancelar</button>
+    <button (click)="onAssign()">Asignar</button>
+  </div>
+</section>

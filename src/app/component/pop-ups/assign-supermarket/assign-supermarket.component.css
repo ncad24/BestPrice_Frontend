@@ -1,0 +1,64 @@
+/* Estilos generales para el formulario */
+section {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: auto;
+  background: #f5f8fa;
+  padding: 20px;
+  border-radius: 15px;
+  font-family: 'Source Sans Pro', sans-serif;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  font-size: 24px;
+  color: #101214;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  font-size: 17px;
+  color: #101214;
+  margin-bottom: 6px;
+}
+
+select{
+  width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #C6C7C7;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+option {
+  font-family: "Source Sans Pro", sans-serif;
+  border: 1px solid #C6C7C7;
+}
+input {
+  width: 280px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #C6C7C7;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 15px;
+}
+
+button {
+  height: 40px;
+  width: 120px;
+  border-radius: 20px;
+  color: #f4f6f7;
+  background: #101214;
+  border: 2px solid #101214;
+  font-size: 17px;
+  cursor: pointer;
+}
