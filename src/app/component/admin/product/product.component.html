@@ -1,0 +1,88 @@
+<section>
+  <div class="search">
+    <label for="searchInput" class="textSearch">Buscar producto por nombre:</label>
+    <input id="searchInput" type="text" placeholder="Ingrese el nombre..." (input)="onSearch($event)">
+  </div>
+  <div class="topProducto">
+    <h1>Lista de Productos</h1>
+    <div class="buttons">
+      <button class="marcaButton"  (click)="openDialogBrand()">Marca</button>
+      <button class="productoRegister" (click)="openDialogRegister()">Registrar Producto</button>
+    </div>
+  </div>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <ng-container matColumnDef="productId">
+        <th mat-header-cell *matHeaderCellDef> .ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.productId}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th class="special" mat-header-cell *matHeaderCellDef> Descripción </th>
+        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="advertisement">
+        <th class="special" mat-header-cell *matHeaderCellDef> Advertencia </th>
+        <td mat-cell *matCellDef="let element"> {{element.advertisement}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="brand">
+        <th mat-header-cell *matHeaderCellDef> Marca </th>
+        <td mat-cell *matCellDef="let element"> {{element.brand.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="category">
+        <th mat-header-cell *matHeaderCellDef> Categoría </th>
+        <td mat-cell *matCellDef="let element"> {{element.category.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="image">
+        <th mat-header-cell *matHeaderCellDef> Imagen </th>
+        <td mat-cell *matCellDef="let element">
+          <img [src]="getImageUrl(element.imagePath)" alt="Imagen del producto" width="100" height="100" />
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="acciones">
+        <th class="action" mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element">
+          <!-- Botón de Asignar -->
+          <button (click)="openDialogAssign(element.productId)">
+            <img class="assignimg" src="/asignar.png">
+          </button>
+
+          <!-- Espacio entre los botones -->
+          &nbsp;&nbsp;
+
+          <!-- Botón de Actualizar -->
+          <button (click)="openDialog(element.productId)">
+            <img class="updateimg" src="/actualizar.png">
+          </button>
+
+          <!-- Espacio entre los botones -->
+          &nbsp;&nbsp;
+
+          <!-- Botón de Eliminar -->
+          <button (click)="showConfirmation(element.productId)">
+            <img class="deleteimg" src="/eliminar.png">
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+</section>
