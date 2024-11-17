@@ -1,0 +1,17 @@
+<section class="supermarketRegister">
+  <form [formGroup]="supermarketForm" (ngSubmit)="onSubmit()" class="formSupermarket">
+    <h2>Registro de Supermercado</h2>
+    <label for="supermarketName">Nombre</label>
+    <input formControlName="name" type="text" id="supermarketName" required>
+    <label for="supermarketDescription">Descripción</label>
+    <input formControlName="description" type="text" id="supermarketDescription" required>
+    <label for="image">Imagen</label>
+    <input formControlName="imagePath" type="file" id="image" (change)="onFileSelected($event)" required>
+    <div class="buttons">
+      <button type="button" (click)="onCancel()">Cancelar</button>
+      <button type="submit">Registrar</button>
+    </div>
+    <!--    <div class="message" *ngIf="registerError" style="color: red;">{{ registerError }}</div>-->
+  </form>
+</section>
+
