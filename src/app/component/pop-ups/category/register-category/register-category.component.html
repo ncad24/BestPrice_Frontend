@@ -1,0 +1,15 @@
+<section class="categoryRegister">
+  <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()" class="formCategory">
+    <h2>Registro de Categoría</h2>
+    <label for="categoryName">Nombre</label>
+    <input formControlName="name" type="text" id="categoryName" required>
+    <label for="categoryDescription">Descripción</label>
+    <input formControlName="description" type="text" id="categoryDescription" required>
+    <div class="buttons">
+      <button type="button" (click)="onCancel()">Cancelar</button>
+      <button type="submit">Registrar</button>
+    </div>
+<!--    <div class="message" *ngIf="registerError" style="color: red;">{{ registerError }}</div>-->
+  </form>
+</section>
+

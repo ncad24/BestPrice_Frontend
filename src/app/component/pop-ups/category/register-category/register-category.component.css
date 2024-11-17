@@ -1,0 +1,53 @@
+.categoryRegister{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: auto;
+  background: #f5f8fa;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+.formCategory{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.categoryRegister h2{
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #101214;
+  font-size: 24px ;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #101214;
+  font-size: 17px;
+  align-self: start;
+}
+input[type="text"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #C6C7C7;
+  border-radius: 5px;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 1rem;
+}
+
+.buttons button {
+  height: 40px;
+  width: 100px;
+  border-radius: 20px;
+  color: #f4f6f7;
+  background: #101214;
+  border: 2px solid #101214;
+  font-size: 17px;
+}
