@@ -1,0 +1,45 @@
+<section class="principal" *ngIf="!isRegistering && !isUpdating && !isDeleting">
+  <h2>¿Qué desea realizar?</h2>
+  <div class="buttonsP">
+    <button (click)="showRegisterForm()">Registrar Marca</button>
+    <button (click)="showUpdateForm()">Actualizar Marca</button>
+    <button (click)="showDeleteForm()">Eliminar Marca</button>
+  </div>
+</section>
+
+<!-- Registro de marca -->
+<section class="register-form" *ngIf="isRegistering">
+  <button class="back" (click)="goBack()"><img src="/atras.png" alt="Back"></button>
+  <form (ngSubmit)="registerBrand()">
+    <h3>Formulario de Registro de Marca</h3>
+    <label for="name1">Nombre de Marca:</label>
+    <input type="text" id="name1" name="name" required>
+    <button type="submit">Registrar</button>
+    <div class="message" *ngIf="registerError">{{ registerError }}</div>
+  </form>
+</section>
+
+<!-- Actualizar marca -->
+<section class="update-form" *ngIf="isUpdating">
+  <button class="back" (click)="goBack()"><img src="/atras.png" alt="Back"></button>
+  <h3>Seleccione la Marca a Actualizar</h3>
+  <select [(ngModel)]="selectedBrandId" (change)="onSelectBrand()" required>
+    <option *ngFor="let brand of lista" [value]="brand.brandId">{{ brand.name }}</option>
+  </select>
+  <form *ngIf="selectedBrandId" (ngSubmit)="updateBrand()">
+    <h3 class="brandUF">Formulario de Actualización de Marca</h3>
+    <label for="name">Nombre de Marca:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="selectedBrand.name" required>
+    <button type="submit">Actualizar</button>
+  </form>
+</section>
+
+<!-- Eliminar marca -->
+<section class="delete-form" *ngIf="isDeleting">
+  <button class="back" (click)="goBack()"><img src="/atras.png" alt="Back"></button>
+  <h3>Seleccione la Marca a Eliminar</h3>
+  <select [(ngModel)]="selectedBrandId" (change)="onSelectBrand()" required>
+    <option *ngFor="let brand of lista" [value]="brand.brandId">{{ brand.name }}</option>
+  </select>
+  <button class="deleteButton" (click)="confirmDelete()">Eliminar</button>
+</section>
