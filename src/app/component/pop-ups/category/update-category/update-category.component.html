@@ -1,18 +1,14 @@
-<h2 mat-dialog-title>Actualizar de Categoría</h2>
-<mat-dialog-content>
-  <form [formGroup]="categoryForm" class="form-container">
-    <mat-form-field appearance="fill">
-      <mat-label>Nombre</mat-label>
-      <input matInput formControlName="name" placeholder="Ingrese el nombre de la categoría" />
-    </mat-form-field>
+<section class="categoryUpdate">
+  <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()" class="formCategory">
+    <h2>Actualizar Categoría</h2>
+    <label for="categoryName">Nombre</label>
+    <input formControlName="name" type="text" id="categoryName" required />
 
-    <mat-form-field appearance="fill">
-      <mat-label>Descripción</mat-label>
-      <input matInput formControlName="description" placeholder="Ingrese la descripción" />
-    </mat-form-field>
+    <label for="categoryDescription">Descripción</label>
+    <input formControlName="description" type="text" id="categoryDescription" required />
+    <div class="buttons">
+      <button type="button" (click)="onCancel()">Cancelar</button>
+      <button type="submit">Actualizar</button>
+    </div>
   </form>
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button (click)="onCancel()">Cancelar</button>
-  <button mat-raised-button color="primary" (click)="onSubmit()">Guardar</button>
-</mat-dialog-actions>
+</section>
