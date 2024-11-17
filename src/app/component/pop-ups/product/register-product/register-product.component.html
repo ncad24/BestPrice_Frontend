@@ -1,0 +1,34 @@
+<section class="productoRegister">
+  <form [formGroup]="productForm"  (ngSubmit)="onSubmit()" class="formProduct">
+    <h2>Registro de Producto</h2>
+    <div class="form-columns">
+      <div class="form-partOne">
+        <label for="name">Nombre</label>
+        <input formControlName="name" type="text" id="name" name="names" required>
+        <label for="description">Descripción</label>
+        <input formControlName="description" type="text" id="description" name="description" required>
+        <label for="advertisement">Advertencia</label>
+        <input formControlName="advertisement" type="text" id="advertisement" name="advertisement" required>
+      </div>
+      <div class="form-partTwo">
+        <label>Marca</label>
+        <select formControlName="brand" (change)="onSelectBrand()" required>
+          <option *ngFor="let brand of brandList" [value]="brand.brandId">{{brand.name}}</option>
+        </select>
+
+        <label>Categoría</label>
+        <select formControlName="category" (change)="onSelectCategory()" required>
+          <option *ngFor="let category of categoryList" [value]="category.categoryId">{{category.name}}</option>
+        </select>
+
+        <label for="image">Imagen</label>
+        <input formControlName="imagePath" type="file" id="image" (change)="onFileSelected($event)">
+      </div>
+    </div>
+    <div class="buttons">
+      <button type="button" (click)="onCancel()">Cancelar</button>
+      <button type="submit">Registrar</button>
+    </div>
+<!--    <div class="message" *ngIf="registerError" style="color: red;">{{ registerError }}</div>-->
+  </form>
+</section>
