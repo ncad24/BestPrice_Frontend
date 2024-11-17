@@ -1,0 +1,57 @@
+<div class="product-detail-container" *ngIf="product">
+  <div class="product-info">
+    <img [src]="getImageUrl(product.imagePath)" alt="{{ product.name }}" class="product-image" />
+
+    <div class="product-details">
+      <h2>{{ product.name }}</h2>
+      <p>{{ product.description }}</p>
+      <p><strong>Marca:</strong> {{ product.brand.name }}</p>
+      <p><strong>Categoría:</strong> {{ product.category.name }}</p>
+    </div>
+  </div>
+
+  <!-- Botón para añadir a lista -->
+  <button class="btn-add-to-list" (click)="openAddToListPopup()">Añadir producto a tu lista</button>
+
+  <!-- Popup -->
+  <div class="popup" *ngIf="showPopup">
+    <div class="popup-content">
+      <h2>Tus Listas</h2>
+      <button class="close-btn" (click)="closeAddToListPopup()"><img src="/cerrar.png" class="cerrar"></button>
+      <div class="user-lists">
+        <div *ngFor="let list of userLists" class="list-item">
+          <h3>{{ list.name }}</h3>
+          <div class="product-images-button">
+            <div class="product-images">
+              <img
+                *ngFor="let product of getImagesForList(list.listId)"
+                [src]="getImageUrl(product.imagePath)"
+                alt="Producto"
+                class="product-thumbnail"
+              />
+              <span *ngIf="(productImagesMap[list.listId]?.length || 0) > 4" class="more-products">...</span>
+            </div>
+            <button class="add-btn" (click)="addProductToList(list.listId)">Añadir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Precios por supermercado</h3>
+  <div *ngIf="supermarketPrices.length > 0; else noPrices" class="supermarket-prices">
+    <div *ngFor="let priceInfo of supermarketPrices; let i = index" class="price-card">
+      <img [src]="getImageSupermarketUrl(priceInfo.imagePath)" alt="{{ priceInfo.supermarketName }}" class="supermarket-image" />
+      <p class="supermarket-name">{{ priceInfo.supermarketName }}</p>
+      <p
+        class="product-price"
+        [ngClass]="{'lowest-price': i === 0}">
+        S/ {{ priceInfo.productPrice | number: '1.2-2' }}
+      </p>
+    </div>
+  </div>
+
+  <ng-template #noPrices>
+    <p>No se encontraron precios en supermercados para este producto.</p>
+  </ng-template>
+</div>
