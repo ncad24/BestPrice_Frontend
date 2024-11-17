@@ -1,0 +1,22 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <button mat-button (click)="opened=!opened"><img src="/menu.png"></button>
+    <h1>BestPrice</h1>
+    <img class="imagenPerfil" src="/perfilpredeterminado.png">
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav [(opened)] = "opened" mode="over">
+    <mat-list>
+      <mat-list-item><a [routerLink]="'/admin/dashboard'"><img src="/dashboard.png">Dashboard</a></mat-list-item>
+      <mat-list-item><a [routerLink]="'/admin/product'"><img src="/products.png">Productos</a></mat-list-item>
+      <mat-list-item><a [routerLink]="'/admin/category'"><img src="/category.png">Categorías</a></mat-list-item>
+      <mat-list-item><a [routerLink]="'/admin/supermarket'"><img src="/supermarket.png">Supermercados</a></mat-list-item>
+    </mat-list>
+    <div class="divider"></div>
+    <button class="logout-button" (click)="logout()">Cerrar sesión</button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
