@@ -1,0 +1,167 @@
+<header>
+  <h1 (click)="goToLanding()">BestPrice</h1>
+  <nav>
+    <a href="#1">Inicio</a>
+    <a href="#2">¿Qué es?</a>
+    <a href="#3">¿Cómo funciona?</a>
+    <a href="#4">¿Quiénes somos?</a>
+    <button (click)="goToLogin()">Iniciar Sesión</button>
+  </nav>
+</header>
+<section class="sectionOne" id="1">
+  <div class="inicio">
+    <article class="articleLanding">
+      <h1>Encuentra y compara los mejores precios en tus productos favoritos</h1>
+      <p>Ahorra tiempo y dinero comprando desde la comodidad de tu hogar con BestPrice.</p>
+    </article>
+  </div>
+</section>
+<section id="2" class="sectionTwo">
+  <div class="about">
+    <h2>¡Conozcamos más sobre BestPrice!</h2>
+    <p>BestPrice es una innovadora plataforma diseñada para facilitar la vida de padres de familia y estudiantes
+      que viven solos, permitiéndoles comparar rápidamente los precios de productos específicos en diferentes
+      supermercados y sus sucursales. Con el objetivo de ahorrar tiempo y esfuerzo, BestPrice ayuda a sus usuarios
+      a encontrar las mejores ofertas y tomar decisiones de compra informadas desde la comodidad de su hogar.
+    </p>
+  </div>
+  <div class="characteristics">
+    <div class="char">
+      <img alt="imagen1" src="/price.png">
+      <h3>Comparación rápida de precios:</h3>
+      <p>BestPrice permite visualizar los precios de productos
+        en varios supermercados en tiempo real, ahorrando tiempo a sus usuarios.</p>
+    </div>
+    <div class="char">
+      <img alt="imagen2" src="/interface.png">
+      <h3>Interfaz amigable y fácil de usar:</h3>
+      <p> La plataforma está diseñada para que cualquier usuario
+        pueda realizar búsquedas y comparar precios sin complicaciones.</p>
+    </div>
+    <div class="char">
+      <img alt="imagen3" src="/access.png">
+      <h3>Acceso a sucursales específicas:</h3>
+      <p> Los usuarios pueden verificar precios y disponibilidad en
+        las sucursales más cercanas, optimizando aún más sus compras.</p>
+    </div>
+  </div>
+  <div class="estadistics">
+    <div class="est">
+      <p>23K</p>
+      <h3>Usuarios registrados</h3>
+    </div>
+    <div class="est">
+      <p>125K</p>
+      <h3>Productos registrados</h3>
+    </div>
+    <div class="est">
+      <p>100K</p>
+      <h3>Marcas registradas</h3>
+    </div>
+  </div>
+</section>
+<section class="sectionThree" id="3">
+  <h2>Encuentra el Mejor Precio con BestPrice</h2>
+  <div class="function">
+    <div class="how">
+      <h3>Pasos a seguir</h3>
+      <ul>
+        <li><strong>1. Busca tu producto</strong> Ingresa el nombre del producto que deseas buscar.</li>
+        <li><strong>2. Filtra y compara</strong> Filtra por supermercado o categoría para encontrar las mejores ofertas.</li>
+        <li><strong>3. ¡Ahorra!</strong> Compara precios y elige la mejor opción para ahorrar en tus compras.</li>
+      </ul>
+    </div>
+    <img src="/supermarketOne.jpg">
+  </div>
+  <div class="function">
+    <img src="/supermarketTwo.jpg">
+    <div class="opinions">
+      <h3>Opiniones de personas</h3>
+      <mat-card class="opinion-card" *ngIf="currentOpinion">
+        <p class="user-name">{{ currentOpinion.user }}</p>
+        <p class="stars">{{ currentOpinion.stars }}</p>
+        <p class="opinion">{{ currentOpinion.text }}</p>
+      </mat-card>
+    </div>
+  </div>
+</section>
+<section class="sectionFour" id="4">
+  <div class="who">
+    <div class="aboutus">
+      <p>¿Aún no eres parte del grupo de BestPricitos?</p>
+      <button>Regístrate</button>
+    </div>
+    <h2>Conoce más al equipo de BestPrice</h2>
+    <div class="mission-vision">
+      <div class="mision">
+        <h3>Nuestra Misión <span>🎯</span></h3>
+        <p>Empoderar a los consumidores con decisiones de compra informadas y eficientes, proporcionándoles herramientas y recursos para encontrar los mejores precios y productos en el mercado.</p>
+      </div>
+      <div class="vision">
+        <h3>Nuestra Visión <span>👁️</span></h3>
+        <p>Nuestra visión es ser la aplicación de referencia para las compras inteligentes en el Perú, ayudando a los usuarios a ahorrar tiempo y dinero en sus compras diarias.</p>
+      </div>
+    </div>
+    <div class="mission-vision">
+      <img class="imageGroup" src="/supermarketThree.jpg">
+      <div class="participants">
+        <div class="carousel-container">
+          <button (click)="prevMember()" class="carousel-button"><img src="/atras.png"></button>
+
+          <div class="carousel-item">
+            <img [src]="teamMembers[currentIndex].photo" alt="{{ teamMembers[currentIndex].name }}" class="member-photo">
+            <h4>{{ teamMembers[currentIndex].name }}</h4>
+            <p>{{ teamMembers[currentIndex].description }}</p>
+          </div>
+
+          <button (click)="nextMember()" class="carousel-button"><img src="/adelante.png"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h2>BestPrice</h2>
+      <p>bestpricecontact&#64;gmail.com</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Atajos rápidos:</h3>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">¿Cómo funciona?</a></li>
+        <li><a href="#">¿Quiénes somos?</a></li>
+        <li><a href="#">Iniciar sesión</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Redes:</h3>
+      <a href="#"><img src="/facebookico.png"></a>
+      <a href="#"><img src="/instagramico.png"></a>
+    </div>
+
+    <div class="footer-section">
+      <h3>Descarga:</h3>
+      <a href="#"><img src="/GooglePlay.png" alt="Descargar en Google Play"></a>
+      <a href="#"><img src="/AppStore.png" alt="Descargar en App Store"></a>
+    </div>
+
+    <div class="footer-section">
+      <h3>Notas de actualización:</h3>
+      <form action="#">
+        <input type="email" placeholder="Recibe noticias futuras">
+        <button type="submit">→</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2024 Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+
