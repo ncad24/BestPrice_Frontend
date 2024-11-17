@@ -1,0 +1,107 @@
+*{
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+section{
+  height: calc(100vh - 100px);
+}
+section .search{
+  height: 50px;
+  width: 100%;
+  background-color: #F4F6F7;
+  border-bottom: 1px solid #C6C7C7;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.search .textSearch{
+  color: #101214;
+  align-items: center;
+  padding-right: 20px;
+}
+#searchInput {
+  margin-right: 20px;
+  height: 10px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+#searchInput:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+.topSupermercado{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+.topSupermercado h1{
+  top:0;
+  margin-left: 60px;
+  font-size: 35px;
+  color: #101214;
+  margin-right: auto;
+}
+.topSupermercado button{
+  text-align: center;
+  font-size: 17px;
+  border: 2px solid #101214;
+  background-color: #101214;
+  color: #f4f6f7;
+  border-radius: 20px;
+  width: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 40px;
+  margin-right: 60px;
+}
+.topSupermercado button:hover{
+  background-color: #f4f6f7;
+  color: #101214;
+}
+.updateimg, .deleteimg, .asignimg {
+  align-self: center;
+  width: 25px;
+  height: auto;
+  /*padding-top: 2px;*/
+}
+
+.mat-elevation-z8 {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.mat-elevation-z8 table th{
+  text-align: center;
+  font-size: 18px;
+  width: 40px;
+  background-color: #f4f6f7;
+  color: #101214;
+}
+.mat-elevation-z8 table td{
+  font-size: 16px;
+  width: 40px;
+  text-align: center;
+}
+
+.mat-elevation-z8 table button{
+  width: auto;
+  height: auto;
+  border-radius: calc(30px + 2px);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.mat-elevation-z8 table button:hover{
+  background-color: lightgray;
+}
+.supermarketImg{
+  height: 70px;
+  width: auto;
+}
