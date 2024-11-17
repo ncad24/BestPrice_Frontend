@@ -1,0 +1,44 @@
+<section>
+  <div class="container-cards">
+    <div class="card-productsSupermarket">
+      <h3>Número de productos</h3>
+      <p>{{ totalProductsBySupermarket }}</p>
+    </div>
+    <div class="card-brands">
+      <h3>Número de marcas</h3>
+      <p>{{ totalBrands }}</p>
+    </div>
+    <div class="card-supermarket">
+      <h3>Número de supermercados</h3>
+      <p>{{ totalSupermarkets }}</p>
+    </div>
+    <div class="card-users">
+      <h3>Número de usuarios</h3>
+      <p>{{ totalUsers }}</p>
+    </div>
+  </div>
+  <div class="grafics">
+    <div class="dashboard-product-click">
+      <h2>Top 5 Productos Más Clickeados</h2>
+      <div class="char">
+        <canvas baseChart
+                [data]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [type]="barChartType">
+        </canvas>
+      </div>
+    </div>
+    <div class="dashboard-product-price">
+      <h2>Top 5 Productos con Menor Precio</h2>
+      <div class="chart">
+        <canvas baseChart
+                [data]="priceChartData"
+                [labels]="priceChartLabels"
+                [options]="priceChartOptions"
+                [type]="priceChartType">
+        </canvas>
+      </div>
+    </div>
+  </div>
+</section>
