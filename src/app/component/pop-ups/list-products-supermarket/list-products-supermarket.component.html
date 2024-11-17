@@ -1,0 +1,66 @@
+<section class="listProducts">
+  <div class="firstLine">
+    <h2>Lista de productos</h2>
+    <div class="searchProducts">
+      <label for="searchInput" class="textSearch">Buscar producto por nombre:</label>
+      <input id="searchInput" type="text" placeholder="Ingrese el nombre..." (input)="onSearch($event)">
+    </div>
+  </div>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="productId">
+        <th mat-header-cell *matHeaderCellDef> .ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.productId}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.productName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="precio">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Precio </th>
+        <td mat-cell *matCellDef="let element" (dblclick)="startEditing(element)">
+          <!-- Mostrar el precio como texto cuando no está en modo edición -->
+          <span *ngIf="!element.editing">{{ element.productPrice }}</span>
+
+          <!-- Mostrar el input solo cuando está en modo edición -->
+          <input
+            *ngIf="element.editing"
+            type="number"
+            class="price-input"
+            [(ngModel)]="element.tempPrice"
+            (blur)="finishEditing(element)"
+            (keydown.enter)="finishEditing(element)"
+          >
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="image">
+        <th mat-header-cell *matHeaderCellDef> Imagen </th>
+        <td mat-cell *matCellDef="let element">
+          <img [src]="getImageUrl(element.imagePath)" alt="Imagen del producto" width="100" height="100" />
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="acciones">
+        <th class="action" mat-header-cell *matHeaderCellDef> Desasignar </th>
+        <td mat-cell *matCellDef="let element">
+          <!-- Botón de Asignar -->
+          <button (click)="showConfirmation(element.productId)">
+            <img class="assignimg" src="/asignar.png">
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[2, 4]"
+                   showFirstLastButtons
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+</section>
+

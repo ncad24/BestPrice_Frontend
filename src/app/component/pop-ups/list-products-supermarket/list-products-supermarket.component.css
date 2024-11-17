@@ -1,0 +1,77 @@
+/* Estilos generales */
+*{
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+.listProducts{
+  padding: 30px;
+}
+.firstLine{
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+.firstLine h2{
+  font-size: 30px;
+  padding-bottom: 15px;
+}
+.firstLine .searchProducts{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 15px;
+}
+.searchProducts{
+  display: flex;
+  align-items: center;
+}
+label {
+  font-size: 16px;
+  color: #101214;
+}
+
+input[type="text"] {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 250px;
+  font-size: 14px;
+}
+
+th,td{
+  text-align: center;
+  width: 50px;
+}
+.mat-elevation-z8 table button{
+  width: auto;
+  height: auto;
+  border-radius: calc(30px + 2px);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.assignimg{
+  align-self: center;
+  width: 25px;
+  height: auto;
+}
+/* Estilos para el input de precio */
+.price-input {
+  width: 60px;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #4CAF50; /* Color de borde */
+  border-radius: 4px; /* Bordes redondeados */
+  background-color: #f9f9f9; /* Fondo claro */
+  color: #333; /* Color de texto */
+  outline: none; /* Quita el borde azul al seleccionar */
+  transition: border-color 0.3s ease; /* Transición suave para el borde */
+}
+
+.price-input:focus {
+  border-color: #66BB6A; /* Color de borde cuando está enfocado */
+  background-color: #fff; /* Fondo blanco cuando está enfocado */
+}
