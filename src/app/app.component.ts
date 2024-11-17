@@ -11,5 +11,5 @@ import {MatSidenav, MatSidenavContainer} from '@angular/material/sidenav';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'bestpricefrontend';
+  title = 'BestPrice';
 }
