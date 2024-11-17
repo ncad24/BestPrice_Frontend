@@ -1,27 +1,17 @@
-# Bestpricefrontend
+## BestPrice
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8.
+[BestPriceLandingPage]([http://full/path/to/img.jpg](https://i.imgur.com/s9Xubpi.png) "LandingBestPrice")
 
-## Development server
+BestPrice es una innovadora plataforma diseñada para facilitar la vida de padres de familia y estudiantes que viven solos, permitiéndoles comparar rápidamente los precios de productos específicos en diferentes supermercados y sus sucursales. Con el objetivo de ahorrar tiempo y esfuerzo, BestPrice ayuda a sus usuarios a encontrar las mejores ofertas y tomar decisiones de compra informadas desde la comodidad de su hogar.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Funcionalidades
+* Comparación rápida de precios: BestPrice permite visualizar los precios de productos en varios supermercados en tiempo real, ahorrando tiempo a sus usuarios.
+* Interfaz amigable y fácil de usar: La plataforma está diseñada para que cualquier usuario pueda realizar búsquedas y comparar precios sin complicaciones.
+* Acceso a sucursales específicas: Los usuarios pueden verificar precios y disponibilidad en los supermercados peruanos más utilizados, optimizando aún más sus compras.
 
-## Code scaffolding
+### Tecnologías utilizadas:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Se utilizaron las siguientes tecnologías para la elaboración de la aplicación web BestPrice:
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+* [![Angular][Angular.io]][Angular-url]
+* [![SpringBoot][Spring.io]][Spring-url]
