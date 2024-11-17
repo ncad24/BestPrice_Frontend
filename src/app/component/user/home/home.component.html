@@ -1,0 +1,56 @@
+<header class="header">
+  <h1 class="logo" (click)="navigateToHome()">BestPrice</h1>
+  <div class="no-logo">
+    <input
+      type="text"
+      placeholder="Buscar producto"
+      class="search-bar"
+      [(ngModel)]="productName"
+      (keyup.enter)="searchProducts()"
+    />
+    <span class="search-icon" (click)="searchProducts()">
+    <img src="/buscar.png">
+    </span>
+    <!-- User icon and dropdown -->
+    <div class="profile-menu" *ngIf="userInfo">
+      <img [src]="getUserImageUrl(userInfo.imagePath)" alt="Usuario" class="user-icon" (click)="toggleDropdown()" />
+      <div class="dropdown-menu" *ngIf="isDropdownOpen">
+        <a (click)="navigateTo('/product-list')">Lista de Compras</a>
+        <a (click)="logout()">Cerrar Sesión</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="nav-wrapper">
+  <button class="scroll-btn left" (click)="scrollLeft()">&#9664;</button>
+  <nav class="nav-bar" #navContainer>
+    <ng-container *ngFor="let category of categories">
+      <a *ngIf="productsByCategory[category.name]?.length" (click)="filterByCategory(category.name)">
+        {{ category.name }}
+      </a>
+    </ng-container>
+  </nav>
+  <button class="scroll-btn right" (click)="scrollRight()">&#9654;</button>
+</section>
+
+<div class="content">
+  <ng-container *ngFor="let category of categories">
+    <section class="favorites" *ngIf="productsByCategory[category.name]?.length">
+      <h2>{{ category.name }}</h2>
+      <div class="product-grid">
+        <div class="product-card" (click)="goToProductDetail(product)"
+             *ngFor="let product of productsByCategory[category.name] | slice:0:5"
+             (mouseenter)="hoverProduct = true"
+             (mouseleave)="hoverProduct = false"
+             [style.cursor]="hoverProduct ? 'pointer' : 'default'">
+          <img [src]="getProductImageUrl(product.imagePath)" alt="{{ product.productName }}" />
+          <h3>{{ product.productName }}</h3>
+          <p>{{ product.productDescription }}</p>
+          <p><strong>Precio:</strong> S/ {{ product.productPrice | number: '1.2-2' }}</p>
+        </div>
+      </div>
+    </section>
+  </ng-container>
+</div>
+
