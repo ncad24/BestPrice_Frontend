@@ -1,6 +1,6 @@
 ## BestPrice
 
-[BestPriceLandingPage]([http://full/path/to/img.jpg](https://i.imgur.com/s9Xubpi.png) "LandingBestPrice")
+![LandingBestPrice](https://i.imgur.com/s9Xubpi.png)
 
 BestPrice es una innovadora plataforma diseñada para facilitar la vida de padres de familia y estudiantes que viven solos, permitiéndoles comparar rápidamente los precios de productos específicos en diferentes supermercados y sus sucursales. Con el objetivo de ahorrar tiempo y esfuerzo, BestPrice ayuda a sus usuarios a encontrar las mejores ofertas y tomar decisiones de compra informadas desde la comodidad de su hogar.
 
@@ -15,3 +15,10 @@ Se utilizaron las siguientes tecnologías para la elaboración de la aplicación
 
 * [![Angular][Angular.io]][Angular-url]
 * [![SpringBoot][Spring.io]][Spring-url]
+
+  
+
+
+
+[Angular-url]: https://angular.io/
+[Spring-url]: https://spring.io/
