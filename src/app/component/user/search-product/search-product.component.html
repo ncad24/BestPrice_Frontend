@@ -1,0 +1,92 @@
+<header class="header">
+  <h1 class="logo" (click)="navigateToHome()">BestPrice</h1>
+  <div class="no-logo">
+    <input
+      type="text"
+      placeholder="Buscar producto"
+      class="search-bar"
+      [(ngModel)]="productName"
+      (keyup.enter)="getProductsByFilter()"
+    />
+    <span class="search-icon" (click)="getProductsByFilter()">
+    <img src="/buscar.png">
+    </span>
+    <!-- User icon and dropdown -->
+    <div class="profile-menu" *ngIf="userInfo">
+      <img [src]="getUserImageUrl(userInfo.imagePath)" alt="Usuario" class="user-icon" (click)="toggleDropdown()" />
+      <div class="dropdown-menu" *ngIf="isDropdownOpen">
+        <a (click)="navigateTo('/product-list')">Lista de Compras</a>
+        <a (click)="logout()">Cerrar Sesión</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <!-- Sidebar de filtros -->
+  <div class="sidebar">
+    <h3>Filtrar por</h3>
+
+    <label for="brand">Marca</label>
+    <select id="brand" [(ngModel)]="brandName">
+      <option value="">Todas</option>
+      <option *ngFor="let brand of brands" [value]="brand.name">{{ brand.name }}</option>
+    </select>
+
+    <label>Rango de precios</label>
+    <div class="price-range-container">
+      <input type="number" id="minPrice" placeholder="Mínimo" [(ngModel)]="minPrice" />
+      <span>-</span>
+      <input type="number" id="maxPrice" placeholder="Máximo" [(ngModel)]="maxPrice" />
+    </div>
+
+    <label for="category">Categoría</label>
+    <select id="category" [(ngModel)]="categoryName">
+      <option value="">Todas</option>
+      <option *ngFor="let category of categories" [value]="category.name">{{ category.name }}</option>
+    </select>
+
+    <label for="store">Supermercado</label>
+    <select id="store" [(ngModel)]="supermarketName">
+      <option value="">Todos</option>
+      <option *ngFor="let supermarket of supermarkets" [value]="supermarket.name">{{ supermarket.name }}</option>
+    </select>
+
+    <button class="apply-filters-btn" (click)="getProductsByFilter()">Aplicar filtros</button>
+  </div>
+
+  <!-- Sección principal de productos -->
+  <div class="products-section">
+    <div class="header">
+      <h1>Resultados de la búsqueda</h1>
+      <label for="sort">Ordenar por:</label>
+      <select id="sort" [(ngModel)]="sortOption" (change)="getProductsByFilter()">
+        <option value="lowest">Menor precio</option>
+        <option value="highest">Mayor precio</option>
+      </select>
+    </div>
+
+    <!-- Lista de productos -->
+    <div *ngIf="products && products.length > 0; else noProducts" class="products-list">
+      <div *ngFor="let product of products"
+           class="product-card"
+           (click)="goToProductDetail(product)"
+           (mouseenter)="hoverProduct = true"
+           (mouseleave)="hoverProduct = false"
+           [style.cursor]="hoverProduct ? 'pointer' : 'default'">
+        <img [src]="getImageUrl(product.imagePath)" alt="{{ product.productName }}" class="product-image" />
+        <h3>{{ product.productName }}</h3>
+        <p>{{ product.productDescription }}</p>
+        <p><strong>Precio:</strong> S/ {{ product.productPrice | number: '1.2-2' }}</p>
+        <!-- Sección principal de productos
+        <p><strong>Marca:</strong> {{ product.brandName }}</p>
+        <p><strong>Categoría:</strong> {{ product.categoryName }}</p>
+        -->
+      </div>
+    </div>
+
+    <ng-template #noProducts>
+      <p>No se encontraron productos.</p>
+    </ng-template>
+  </div>
+</div>

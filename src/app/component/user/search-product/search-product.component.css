@@ -1,0 +1,253 @@
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+/* Encabezado */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #F4F6F7;
+  padding: 10px 20px;
+  color: #101214;
+  width: 100%;
+  height: 90px;
+}
+.logo {
+  color: #101214;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 40px;
+  margin-right: auto;
+}
+.logo h1 {
+  cursor: pointer;
+}
+.no-logo{
+  display: flex;
+  gap: 10px;
+}
+.no-logo input[type="text"]{
+  width: 300px;
+  height: 35px;
+  padding: 8px;
+}
+.no-logo .search-bar{
+  border-radius: 20px;
+  border-color: #C6C7C7;
+  align-self: center;
+}
+.search-icon{
+  position: absolute;
+  cursor: pointer;
+  align-self: center;
+  transform: translateX(270px);
+}
+.search-icon img {
+  width: 25px;
+  height: auto;
+}
+.profile-menu {
+  position: relative;
+  display: inline-block;
+}
+.user-icon {
+  width: 60px;
+  height: auto;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background-color: #F4F6F7;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  z-index: 1000;
+}
+.dropdown-menu a {
+  padding: 12px;
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+/* Contenedor principal */
+.container {
+  display: flex;
+  padding: 20px;
+}
+
+/* Sidebar de filtros */
+.sidebar {
+  width: 20%;
+  padding: 30px 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.sidebar h3 {
+  font-size: 30px;
+  margin-bottom: 5px;
+  color: #101214;
+}
+
+.sidebar label {
+  font-size: 17px;
+  font-weight: bold;
+  color: #101214;
+  display: block;
+  padding-top: 12px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+}
+
+.sidebar select, .sidebar input[type="number"]{
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 10px;
+  border: 1px solid #C6C7C7;
+}
+
+.sidebar button{
+  color: #f4f6f7;
+  border-radius: 15px;
+  background-color: #101214
+}
+
+/* Sección de productos */
+.products-section {
+  width: 80%;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.header h1{
+  color: #101214;
+  margin-right: auto;
+}
+.header label{
+  font-weight: bold;
+  color: #101214;
+  margin-right: 10px;
+}
+.header select{
+  width: 25%;
+  padding: 8px;
+  border-radius: 15px;
+  border: 1px solid #C6C7C7;
+}
+
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Tarjeta de producto */
+.product-card {
+  width: calc(33.33% - 20px);
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+}
+
+.product-card img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 1em;
+}
+
+.product-card h3 {
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+  color: #101214;
+}
+
+.product-card p {
+  font-size: 0.9em;
+  color: #101214;
+  padding: 5px;
+}
+.product-card p strong{
+  font-weight: bolder;
+}
+/* Botón Aplicar Filtros */
+.apply-filters-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.apply-filters-btn:hover {
+  background-color: #555;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield; /* Para Firefox */
+}
+
+/* Elimina las flechitas de los inputs de número */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Contenedor para el rango de precios */
+.price-range-container {
+  display: flex;
+  align-items: center;
+}
+
+.price-range-container input[type="number"] {
+  width: 45%; /* Ajusta el ancho de cada campo */
+  padding: 5px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.price-range-container span {
+  margin: 0 5px; /* Espaciado alrededor del guion */
+}
