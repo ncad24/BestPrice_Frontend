@@ -1,0 +1,74 @@
+.productoRegister{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: auto;
+  background: #f5f8fa;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+.formProduct{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.productoRegister h2{
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #101214;
+  font-size: 24px ;
+}
+.form-columns {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+
+.form-partOne, .form-partTwo {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #101214;
+  font-size: 17px;
+}
+
+input[type="text"],
+input[type="file"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #C6C7C7;
+  border-radius: 5px;
+}
+
+input[type="file"] {
+  padding: 5px;
+  border: 1px solid #C6C7C7;
+  width: 90%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 1rem;
+}
+
+.buttons button {
+  height: 40px;
+  width: 100px;
+  border-radius: 20px;
+  color: #f4f6f7;
+  background: #101214;
+  border: 2px solid #101214;
+  font-size: 17px;
+}
