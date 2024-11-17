@@ -1,0 +1,162 @@
+<header class="header">
+  <h1 class="logo" (click)="navigateTo('/home')">BestPrice</h1>
+  <div class="no-logo">
+    <!-- User icon and dropdown -->
+    <div class="profile-menu" *ngIf="userInfo">
+      <img [src]="getUserImageUrl(userInfo.imagePath)" alt="Usuario" class="user-icon" (click)="toggleDropdown()" />
+      <div class="dropdown-menu" *ngIf="isDropdownOpen">
+        <a (click)="navigateTo('/home')">Home</a>
+        <a (click)="logout()">Cerrar Sesión</a>
+      </div>
+    </div>
+  </div>
+</header>
+<!--
+<div class="container">
+  &lt;!&ndash; Sección de selección de lista &ndash;&gt;
+  <div>
+    <h2>Mis Listas</h2>
+    <select
+      [(ngModel)]="selectedListId"
+      (change)="loadProducts()"
+      *ngIf="userLists.length > 0"
+    >
+      <option *ngFor="let list of userLists" [value]="list.listId">
+        {{ list.name }}
+      </option>
+    </select>
+    <button (click)="openCreateListPopup()">+ Crear Lista</button>
+  </div>
+
+  &lt;!&ndash; Productos en la lista seleccionada &ndash;&gt;
+  <div *ngIf="products.length > 0">
+    <h3>Productos</h3>
+    <ul>
+      <li *ngFor="let product of products">
+        <h4>{{ product.name }}</h4>
+        <p><strong>Precio:</strong> S/ {{ product.productPrice | number: '1.2-2' }}</p>
+        <p>{{ product.description }}</p>
+        <img [src]="getImageUrl(product.imagePath)" alt="{{ product.name }}" class="product-image" />
+        <button (click)="deleteProduct(product.productId)">Eliminar producto</button>
+      </li>
+    </ul>
+  </div>
+  <p *ngIf="products.length === 0">No hay productos en esta lista.</p>
+
+  <h3>Precios por supermercado</h3>
+  <div *ngIf="supermarketPrices.length > 0; else noPrices" class="supermarket-prices">
+    <div *ngFor="let priceInfo of supermarketPrices; let i = index" class="price-card">
+      <img [src]="getImageSupermarketUrl(priceInfo.imagePath)" alt="{{ priceInfo.supermarketName }}" class="supermarket-image" />
+      <p class="supermarket-name">{{ priceInfo.supermarketName }}</p>
+      <p
+        class="product-price"
+        [ngClass]="{'lowest-price': i === 0}">
+        S/ {{ priceInfo.productPrice | number: '1.2-2' }}
+      </p>
+    </div>
+  </div>
+
+  <ng-template #noPrices>
+    <p>No se encontraron precios en supermercados para este producto.</p>
+  </ng-template>
+
+  &lt;!&ndash; Popup para crear una nueva lista &ndash;&gt;
+  <div
+    class="popup"
+    *ngIf="showCreateListPopup"
+    style="position: fixed; background: rgba(0,0,0,0.5); top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;"
+  >
+    <div style="background: white; padding: 20px; border-radius: 8px;">
+      <h3>Crear Nueva Lista</h3>
+      <form [formGroup]="listaForm" (ngSubmit)="createList()">
+        <label for="listName">Nombre de la Lista</label>
+        <input
+          id="listName"
+          formControlName="name"
+          type="text"
+          placeholder="Nombre de la nueva lista"
+        />
+        <p *ngIf="listaForm.get('name')?.invalid && listaForm.get('name')?.touched">
+          <small *ngIf="listaForm.get('name')?.errors?.['required']">El nombre es obligatorio.</small>
+          <small *ngIf="listaForm.get('name')?.errors?.['minlength']">El nombre debe tener al menos 3 caracteres.</small>
+          <small *ngIf="listaForm.get('name')?.errors?.['maxlength']">El nombre no puede superar los 50 caracteres.</small>
+        </p>
+        <button type="submit" [disabled]="listaForm.invalid">Crear</button>
+        <button type="button" (click)="closeCreateListPopup()">Cancelar</button>
+      </form>
+    </div>
+  </div>
+</div>
+-->
+<div class="container">
+  <!-- Sección de selección de lista -->
+  <div class="list">
+    <h2>Mis Listas</h2>
+    <select [(ngModel)]="selectedListId" (change)="loadProducts()" *ngIf="userLists.length > 0">
+      <option *ngFor="let list of userLists" [value]="list.listId">{{ list.name }}</option>
+    </select>
+    <button (click)="openCreateListPopup()">+ Crear Lista</button>
+  </div>
+
+  <!-- Productos en la lista seleccionada -->
+  <div *ngIf="products.length > 0" class="list-product">
+    <h3>Productos</h3>
+    <div class="products-container">
+      <div class="product-card-button" *ngFor="let product of products">
+        <div class="product-card" >
+          <div class="product-image">
+            <img [src]="getImageUrl(product.imagePath)" alt="{{ product.name }}"/>
+          </div>
+          <div class="product-info">
+            <h4>{{ product.name }}</h4>
+            <p><strong>Precio:</strong> S/ {{ product.productPrice | number: '1.2-2' }}</p>
+            <p>{{ product.description }}</p>
+          </div>
+        </div>
+        <button (click)="deleteProduct(product.productId)">Eliminar producto</button>
+      </div>
+    </div>
+  </div>
+<!--  <p *ngIf="products.length === 0">No hay productos en esta lista.</p>-->
+
+  <!-- Precios por supermercado -->
+  <div *ngIf="supermarketPrices.length > 0; else noPrices" class="list-product">
+    <h3>Precios por supermercado</h3>
+    <div class="supermarket-prices-container">
+      <div *ngFor="let priceInfo of supermarketPrices; let i = index" class="price-card">
+        <div class="supermarket-image">
+          <img [src]="getImageSupermarketUrl(priceInfo.imagePath)" alt="{{ priceInfo.supermarketName }}" />
+        </div>
+        <p class="supermarket-name">{{ priceInfo.supermarketName }}</p>
+        <p class="product-price" [ngClass]="{'lowest-price': i === 0}">
+          S/ {{ priceInfo.productPrice | number: '1.2-2' }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noPrices>
+    <p class="no-prices-message">Seleccione uno</p>
+  </ng-template>
+
+  <!-- Popup para crear una nueva lista -->
+  <div class="popup" *ngIf="showCreateListPopup">
+    <div class="new-list">
+      <h3>Crear Nueva Lista</h3>
+      <form [formGroup]="listaForm" (ngSubmit)="createList()">
+        <label for="listName">Nombre de la Lista</label>
+        <input id="listName" formControlName="name" type="text" placeholder="Nombre de la nueva lista" />
+        <p *ngIf="listaForm.get('name')?.invalid && listaForm.get('name')?.touched">
+          <small *ngIf="listaForm.get('name')?.errors?.['required']">El nombre es obligatorio.</small>
+          <small *ngIf="listaForm.get('name')?.errors?.['minlength']">El nombre debe tener al menos 3 caracteres.</small>
+          <small *ngIf="listaForm.get('name')?.errors?.['maxlength']">El nombre no puede superar los 50 caracteres.</small>
+        </p>
+        <div class="buttons">
+          <button type="submit" [disabled]="listaForm.invalid">Crear</button>
+          <button type="button" (click)="closeCreateListPopup()">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

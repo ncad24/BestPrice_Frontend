@@ -1,0 +1,319 @@
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+/* Encabezado */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #F4F6F7;
+  padding: 10px 20px;
+  color: #101214;
+  width: 100%;
+  height: 90px;
+}
+.logo {
+  color: #101214;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 40px;
+  margin-right: auto;
+}
+.logo h1 {
+  cursor: pointer;
+}
+.no-logo{
+  display: flex;
+  gap: 10px;
+}
+.profile-menu {
+  position: relative;
+  display: inline-block;
+}
+.user-icon {
+  width: 60px;
+  height: auto;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background-color: #F4F6F7;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  z-index: 1000;
+}
+.dropdown-menu a {
+  padding: 12px;
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+/**/
+.container {
+  margin: 30px;
+  overflow: hidden;
+}
+.container .list{
+  display: flex;
+  justify-content: flex-end;
+  align-self: center;
+  margin-bottom: 20px;
+}
+.container .list h2{
+  margin-right: auto;
+  font-size: 50px;
+  color: #101214;
+}
+.container .list select{
+  width: 220px;
+  height: 40px;
+  border: 1px solid #101214;
+  border-radius: 10px;
+  margin-right: 10px;
+  align-self: center;
+}
+.container .list button{
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  height: 40px;
+  background-color: #101214;
+  align-self: center;
+}
+/*Products List*/
+.list-product{
+  display: flex;
+  flex-direction: column;
+}
+.list-product h3{
+  font-size: 25px;
+  color: #101214;
+}
+.products-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+.product-card-button{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.product-card {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  justify-self: center;
+  padding: 10px;
+  gap:10px;
+}
+
+.product-card h4{
+  color: #101214;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.product-card .product-info{
+  width: 45%;
+}
+.product-card p{
+  color: #101214;
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.product-card p strong{
+  color: #101214;
+  font-weight: bold;
+  text-align: left;
+}
+
+.product-image {
+  width: 50%;
+  align-self: center;
+  justify-self: center;
+  padding: 10px;
+}
+.product-image img {
+  width: 90%;
+  height: 90%;
+}
+.product-card-button button{
+  width: 100%;
+  color: white;
+  background-color: #101214;
+  font-size: 15px;
+  border-radius: 15px;
+  height: 30px;
+  margin-top: auto;
+  justify-content: center;
+  align-items: center;
+}
+/*Supermarket list*/
+.supermarket-prices-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.price-card {
+  flex: 0 0 auto;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+.price-card .supermarket-name{
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.price-card .product-price{
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.supermarket-image {
+  width: 100px;
+  height: 90px;
+  margin-bottom: 10px;
+}
+.supermarket-image img{
+  width: 90%;
+  height: 90%;
+}
+
+.lowest-price {
+  color: #007b00;
+  font-weight: bold;
+}
+/*Pop Up*/
+/* Estilo para el fondo del popup */
+.popup {
+  position: fixed;
+  padding: 10px;
+  border-radius: 15px;
+  width: 280px;
+  height: 180px;
+  background-color: #f4f6f7;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  animation: fadeIn 0.3s;
+}
+.popup h3{
+  font-size: 25px;
+  color: #101214;
+  text-align: center;
+}
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Estilos del formulario */
+.new-list label {
+  display: block;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.new-list input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #C6C7C7;
+  border-radius: 10px;
+}
+.new-list .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+}
+.new-list button {
+  width: 45%;
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.new-list button[type="button"] {
+  background-color: #f44336;
+}
+
+.new-list button:disabled {
+  background-color: grey;
+  color: white;
+  cursor: not-allowed;
+}
+
+.new-list button:hover:not(:disabled) {
+  background-color: #45a049;
+}
+
+.new-list button[type="button"]:hover {
+  background-color: #e53935;
+}
+.no-prices-message {
+  font-size: 40px;
+  color: #C6C7C7;
+  text-align: center;
+  margin: 20px 0;
+  font-weight: bold;
+  justify-self: center;
+  align-self: center;
+}
+
