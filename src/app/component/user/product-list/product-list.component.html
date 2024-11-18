@@ -3,7 +3,7 @@
   <div class="no-logo">
     <!-- User icon and dropdown -->
     <div class="profile-menu" *ngIf="userInfo">
-      <img [src]="getUserImageUrl(userInfo.imagePath)" alt="Usuario" class="user-icon" (click)="toggleDropdown()" />
+      <img [src]="getUserImageUrl(userInfo.imagePath.toString())" alt="Usuario" class="user-icon" (click)="toggleDropdown()" />
       <div class="dropdown-menu" *ngIf="isDropdownOpen">
         <a (click)="navigateTo('/home')">Home</a>
         <a (click)="logout()">Cerrar Sesión</a>

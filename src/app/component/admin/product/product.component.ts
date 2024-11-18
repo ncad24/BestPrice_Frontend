@@ -26,6 +26,7 @@ import {CommonModule} from '@angular/common';
 import {BrandComponent} from '../brand/brand.component';
 import {AssignSupermarketComponent} from '../../pop-ups/assign-supermarket/assign-supermarket.component';
 import {OverlayService} from '../../../services/overlay.service';
+import {photosLink} from '../../forphotoslink/photoslink';
 
 @Component({
   selector: 'app-product',
@@ -51,6 +52,7 @@ import {OverlayService} from '../../../services/overlay.service';
   styleUrl: './product.component.css'
 })
 export class ProductComponent {
+  private url = photosLink.apiUrl;
   products: Product[] = [];
   displayedColumns: string[] = ['productId', 'name', 'description', 'advertisement', 'brand', 'category','image', 'acciones'];
   dataSource: MatTableDataSource<Product> = new MatTableDataSource<Product>();
@@ -189,6 +191,6 @@ export class ProductComponent {
   }
 
   getImageUrl(imagePath: string): string {
-    return `http://localhost:8080/images/product/${imagePath}`;
+    return `${this.url}/images/product/${imagePath}`;
   }
 }

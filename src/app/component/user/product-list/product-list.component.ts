@@ -12,6 +12,7 @@ import {ProductPerUserDto} from '../../../model/product-per-user-dto';
 import {PricesByProductSupermarket} from '../../../model/prices-by-product-supermarket';
 import {ProductService} from '../../../services/product.service';
 import {Router} from '@angular/router';
+import {photosLink} from '../../forphotoslink/photoslink';
 
 @Component({
   selector: 'app-product-list',
@@ -29,6 +30,7 @@ import {Router} from '@angular/router';
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent {
+  private url = photosLink.apiUrl;
   listaForm: FormGroup;
   route: Router = inject(Router);
   userLists: any[] = [];
@@ -160,13 +162,13 @@ export class ProductListComponent {
     });
   }
   getImageUrl(imagePath: string): string {
-    return `http://localhost:8080/images/product/${imagePath}`;
+    return `${this.url}/images/product/${imagePath}`;
   }
   getImageSupermarketUrl(imagePath: string): string {
-    return `http://localhost:8080/images/supermarket/${imagePath}`;
+    return `${this.url}/images/supermarket/${imagePath}`;
   }
-  getUserImageUrl(imagePath: String): String {
-    return `http://localhost:8080/images/user/${imagePath}`;
+  getUserImageUrl(imagePath: string): string {
+    return `${this.url}/images/user/${imagePath}`;
   }
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;

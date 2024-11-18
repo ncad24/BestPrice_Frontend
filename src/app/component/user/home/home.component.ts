@@ -10,6 +10,7 @@ import {UserAppService} from '../../../services/user-app.service';
 import {UserInfoDto} from '../../../model/user-info-dto';
 import {ProductclickService} from '../../../services/productclick.service';
 import {OverlayService} from '../../../services/overlay.service';
+import {photosLink} from '../../forphotoslink/photoslink';
 
 @Component({
   selector: 'app-home',
@@ -25,6 +26,7 @@ import {OverlayService} from '../../../services/overlay.service';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  private url: string = photosLink.apiUrl;
   productName: string = '';
   route: Router = inject(Router);
   categoryService: CategoryService = inject(CategoryService);
@@ -98,13 +100,11 @@ export class HomeComponent {
     this.route.navigate(['/search'], { queryParams: { categoryName: categoryName } });
   }
 
-  getProductImageUrl(imagePath: String): string {
-    imagePath = imagePath.toString();
-    return `http://localhost:8080/images/product/${imagePath}`;
+  getProductImageUrl(imagePath: String) {
+    return `${this.url}/images/product/${imagePath}`;
   }
-
-  getUserImageUrl(imagePath: String): String {
-    return `http://localhost:8080/images/user/${imagePath}`;
+  getUserImageUrl(imagePath: string): string {
+    return `${this.url}/images/user/${imagePath}`;
   }
 
   scrollLeft() {

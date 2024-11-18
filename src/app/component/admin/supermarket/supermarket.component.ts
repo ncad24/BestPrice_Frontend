@@ -24,6 +24,7 @@ import {ProductService} from '../../../services/product.service';
 import {
   ListProductsSupermarketComponent
 } from '../../pop-ups/list-products-supermarket/list-products-supermarket.component';
+import {photosLink} from '../../forphotoslink/photoslink';
 
 @Component({
   selector: 'app-supermarket',
@@ -49,6 +50,7 @@ import {
   styleUrl: './supermarket.component.css'
 })
 export class SupermarketComponent {
+  private url = photosLink.apiUrl;
   lista: Supermarket[] = [];
   displayedColumns: string[] = ['supermarketId', 'nameSupermarket','description','image' ,'acciones'];
   dataSource: MatTableDataSource<Supermarket> = new MatTableDataSource<Supermarket>();
@@ -176,7 +178,7 @@ export class SupermarketComponent {
   }
 
   getImageUrl(imagePath: string): string {
-    return `http://localhost:8080/images/supermarket/${imagePath}`;
+    return `${this.url}/images/supermarket/${imagePath}`;
   }
 
 }
