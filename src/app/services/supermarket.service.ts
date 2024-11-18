@@ -30,7 +30,7 @@ export class SupermarketService {
     return this.http.put(this.url + '/supermarket/update', supermarket);
   }
   delete(id: number) {
-    return this.http.delete(this.url + '/supermarket/delete' + id);
+    return this.http.delete(this.url + '/supermarket/delete/' + id);
   }
   setList(newList: Supermarket[]): void{
     this.supermarketList.next(newList);

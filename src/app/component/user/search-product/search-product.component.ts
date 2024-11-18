@@ -29,6 +29,7 @@ import {UserInfoDto} from '../../../model/user-info-dto';
 import {UserAppService} from '../../../services/user-app.service';
 import {OverlayService} from '../../../services/overlay.service';
 import {ProductclickService} from '../../../services/productclick.service';
+import {photosLink} from '../../forphotoslink/photoslink';
 
 @Component({
   selector: 'app-search-product',
@@ -52,6 +53,7 @@ import {ProductclickService} from '../../../services/productclick.service';
   styleUrl: './search-product.component.css'
 })
 export class SearchProductComponent {
+  private url = photosLink.apiUrl;
   productName: string = '';
   brandName: string = '';
   categoryName: string = '';
@@ -275,8 +277,9 @@ export class SearchProductComponent {
   }
 
   getUserImageUrl(imagePath: String): String {
-    return `http://localhost:8080/images/user/${imagePath}`;
+    return `${this.url}/images/user/${imagePath}`;
   }
+
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
   }

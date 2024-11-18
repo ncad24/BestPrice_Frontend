@@ -18,6 +18,7 @@ import {ListproductsbysupermarketDto} from '../../../model/listproductsbysuperma
 import Swal from 'sweetalert2';
 import {FormsModule} from '@angular/forms';
 import {NgIf} from '@angular/common';
+import {photosLink} from '../../forphotoslink/photoslink';
 
 @Component({
   selector: 'app-list-products-supermarket',
@@ -43,6 +44,7 @@ import {NgIf} from '@angular/common';
   styleUrl: './list-products-supermarket.component.css'
 })
 export class ListProductsSupermarketComponent {
+  private url = photosLink.apiUrl;
   productsList: ListproductsbysupermarketDto[] = [];
   productService: ProductService = inject(ProductService);
 
@@ -78,7 +80,7 @@ export class ListProductsSupermarketComponent {
   }
 
   getImageUrl(imagePath: string): string {
-    return `http://localhost:8080/images/product/${imagePath}`;
+    return `${this.url}/images/product/${imagePath}`;
   }
 
   onSearch(event: Event): void {
