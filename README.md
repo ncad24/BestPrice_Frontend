@@ -34,12 +34,17 @@ BestPrice es una innovadora plataforma diseñada para facilitar la vida de padre
 [![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff)](#)
 
 ### Uso de la aplicación
+
 En caso quieras agregar productos o ver el dashboard, utiliza las siguientes credenciales:
-* Usuario: pepito.perez
-* Contraseña: pepito123
+
+* **Usuario:** `pepito.perez`  
+* **Contraseña:** `pepito123`  
+
 En caso quieras ver la aplicación como usuario, utiliza las siguientes credenciales:
-* Usuario: juanjose
-* Contraseña: juanito123
+
+* **Usuario:** `juanjose`  
+* **Contraseña:** `juanito123`
+
 
 Si quieres tener tu propio usuario, tienes la opción de crear tu propio usuario al darle click al botón de login.
 
