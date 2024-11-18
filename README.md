@@ -16,7 +16,7 @@ BestPrice es una innovadora plataforma diseñada para facilitar la vida de padre
 
 ### FrontEnd:
 [![HTML](https://img.shields.io/badge/HTML-%23E34F26.svg?logo=html5&logoColor=white)](#)  
-[![CSS](https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=fff)](#)  
+[![CSS](https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=fff)](#)
 
 ### Lenguajes:
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff)](#)  
@@ -37,12 +37,12 @@ BestPrice es una innovadora plataforma diseñada para facilitar la vida de padre
 
 En caso quieras agregar productos o ver el dashboard, utiliza las siguientes credenciales:
 
-* **Usuario:** `pepito.perez`  
-* **Contraseña:** `pepito123`  
+* **Usuario:** `pepito.perez`
+* **Contraseña:** `pepito123`
 
 En caso quieras ver la aplicación como usuario, utiliza las siguientes credenciales:
 
-* **Usuario:** `juanjose`  
+* **Usuario:** `juanjose`
 * **Contraseña:** `juanito123`
 
 
