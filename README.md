@@ -14,11 +14,11 @@ BestPrice es una innovadora plataforma diseñada para facilitar la vida de padre
 Se utilizaron las siguientes tecnologías para la elaboración de la aplicación web BestPrice:
 
 * [![Angular][Angular.io]][Angular-url]
-* [![SpringBoot][Spring.io]][Spring-url]
+* [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?logo=springboot&logoColor=fff)](#)
 
   
 
 
 
 [Angular-url]: https://angular.io/
-[Spring-url]: https://spring.io/
+[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
